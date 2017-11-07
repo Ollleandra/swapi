@@ -16,8 +16,27 @@ $(document).ready(function() {
                 var url = "<p><b>Url</b> " + this.url + "</p>";
                 var starships = (this.starships.length > 0) ? "<p><b>Starships:</b> <br>" + this.starships.join(',<br/>') + "</p>" : "";
                 var id_checkbox = "<input type='checkbox' id='id_" + index + "'/><span>Like</span>";
-                // $('.persons').append("<figure>" + name + id_checkbox + "<figcaption>" + height + mass + hair_color + skin_color + gender + birth_year + homeworld + url + starships + "</figcaption></figure>");
-                $('.persons').append("<figure>" + name + "<figcaption>" + height + mass + hair_color + skin_color + gender + birth_year + homeworld + url + starships + "</figcaption></figure>");
+                $('.persons').append("<figure>" + name + id_checkbox + "<figcaption>" + height + mass + hair_color + skin_color + gender + birth_year + homeworld + url + starships + "</figcaption></figure>");
+                // $('.persons').append("<figure>" + name + "<figcaption>" + height + mass + hair_color + skin_color + gender + birth_year + homeworld + url + starships + "</figcaption></figure>");
+
+                var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
+                    $checkboxes = $(".persons input:checkbox");
+
+                $checkboxes.on("change", function(){
+                    $checkboxes.each(function(){
+                        checkboxValues[this.id] = this.checked;
+                    });
+
+                    localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+                });
+
+// On page load
+                $.each(checkboxValues, function(key, value) {
+                    $("#" + key).prop('checked', value);
+                });
+
+
+
             });
         }
     });
