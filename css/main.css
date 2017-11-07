@@ -1,0 +1,157 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: "DeathStar";
+    src: url(../font/death_star.otf);
+}
+html{
+    font-size: 15px;
+    font-family: "Open Sans","Helvetica Neue";
+    letter-spacing: 0.03rem;
+    line-height: 1.5;
+}
+header, footer, main{
+    display: block;
+}
+.poster{
+    width:100%;
+    height:50vmin;
+    background:
+    linear-gradient(to bottom, #000000 5px, #ffffff 5px, #ffffff 10px, transparent 10px),
+            url("../img/bg.jpg") no-repeat center top;
+    background-size: 100% auto;
+    text-align: right;
+    transition: all 0.3s ease-out;
+}
+.poster:hover{
+    background-size: 120% auto;
+    transition: all 0.3s ease-out;
+}
+.logo{
+    display: inline-block;
+    width:50vmin;
+    height:50vmin;
+    margin-right: 35vmin;
+    background: url("../img/logo.svg") no-repeat 50% 85%,
+                radial-gradient(circle at center, #db9b6b 30%, transparent 30%, transparent 40%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.1) 50%, transparent 50%) center center;
+    background-size: 55% 55%, 95% 95%;
+    opacity: 0.9;
+    transition: all 0.2s ease-out;
+}
+.logo a {
+    display: inline-block;
+    width:100%;
+    height:50vmin;
+}
+.logo:hover{
+    background-size: 55% 55%, 110% 110%;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+}
+nav{
+    height: 50px;
+    margin-top: 5px;
+    background-color: #005e84;
+}
+nav ul{
+    height: 50px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    list-style: none;
+    text-transform: uppercase;
+}
+nav li{
+    align-self: center;
+}
+nav a, h2{
+    color: white;
+    font-family: DeathStar;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+header nav a{
+    display: inline-block;
+    padding: 12px 1rem;
+    height: 50px;
+    width: 100%;
+    transition: all 0.2s ease-out;
+}
+header nav a:hover{
+    background-color: #db9b6b;
+    border-radius: 0.3rem;
+}
+footer{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #21212b;
+    color: #ffffff;
+}
+footer nav{
+    margin: 0 4rem;
+    background-color: inherit;
+}
+footer nav li{
+    margin: 1rem;
+}
+.footer-nav a{
+    position: relative;
+    font-size: 1rem;
+    display: inline-block;
+}
+.footer-nav a::before{
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 0%;
+    height: 0.2rem;
+    background-color: #db9b6b;
+    transition: all 0.3s ease-out;
+}
+.footer-nav a:hover::before{
+    width:100%;
+    transition: all 0.3s ease-out;
+}
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1, h2, .footer-text, .desc-site{
+    text-align: center;
+}
+h1{
+    margin: 20px;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.5rem;
+    color: #db9b6b;
+    text-align: center;
+}
+figcaption{
+    margin-top: 20px;
+    font-size: 1rem;
+}
+b, strong{
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #666666;
+}
+.persons {
+    margin: 20px auto;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+figure{
+    max-width: 25%;
+    margin: 20px;
+}
+
+
